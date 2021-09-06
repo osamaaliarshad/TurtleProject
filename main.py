@@ -1,12 +1,19 @@
 from turtle import Turtle, Screen
-
+from random import random
 
 timmy = Turtle()
 screen = Screen()
-timmy.color("green")
-i = 0
-while i < 4:
-    timmy.forward(50)
-    timmy.right(90)
+timmy.pencolor()
+
+
+i = 3
+while i < 10:
+    timmy.pencolor(random(), random(), random())
+    j = 0
+    while j < i:
+        timmy.right(360//i)
+        timmy.forward(100)
+        j += 1
     i += 1
+
 screen.exitonclick()
