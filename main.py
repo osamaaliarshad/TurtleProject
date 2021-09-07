@@ -3,17 +3,25 @@ from random import random
 
 timmy = Turtle()
 screen = Screen()
-timmy.pencolor()
+timmy.pensize(10)
 
-
-i = 3
-while i < 10:
+i = 9
+while i < 1000:
+    # 0 - 1
     timmy.pencolor(random(), random(), random())
-    j = 0
-    while j < i:
-        timmy.right(360//i)
-        timmy.forward(100)
-        j += 1
+    generated_number = random()
+    if generated_number <= 0.25:
+        timmy.right(90)
+        timmy.forward(10)
+    elif generated_number <= 0.50:
+        timmy.left(90)
+        timmy.forward(10)
+    elif generated_number <= 0.75:
+        timmy.forward(10)
+    else:
+        timmy.left(180)
+        timmy.forward(10)
+    timmy.forward(10)
     i += 1
 
 screen.exitonclick()
